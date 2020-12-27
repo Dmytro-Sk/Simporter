@@ -6,7 +6,25 @@
 import scrapy
 
 
-class ISimporterItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+class DresslilyComUrlsItem(scrapy.Item):
+    url = scrapy.Field()
+
+
+class DresslilyComProductsItem(scrapy.Item):
+    product_id = scrapy.Field()
+    product_url = scrapy.Field()
+    name = scrapy.Field()
+    discount = scrapy.Field()
+    discounted_price = scrapy.Field()
+    original_price = scrapy.Field()
+    total_reviews = scrapy.Field()
+    product_info = scrapy.Field()
+
+
+class DresslilyComViewsItem(scrapy.Item):
+    product_id = scrapy.Field()
+    rating = scrapy.Field()
+    timestamp = scrapy.Field()
+    text = scrapy.Field()
+    size = scrapy.Field()
+    color = scrapy.Field()

@@ -20,7 +20,11 @@ NEWSPIDER_MODULE = 'i_simporter.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 2
+CONCURRENT_REQUESTS = 4
+
+# Custom settings
+# FEED_EXPORT_BATCH_ITEM_COUNT = 10
+# FEED_URI = '../i_simporter/iii_results/%(batch_id)02d-dresslily_com_products.csv'
 
 # Configure a delay for requests for the same website (default: 0)
 # See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay
@@ -62,9 +66,9 @@ CONCURRENT_REQUESTS = 2
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
+# ITEM_PIPELINES = {
 #    'i_simporter.pipelines.ISimporterPipeline': 300,
-#}
+# }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
