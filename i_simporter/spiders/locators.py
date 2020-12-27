@@ -39,11 +39,3 @@ class Locators:
     TEXT1 = './/p[@class="reviewcon"]'
     SIZE1 = './/p[@class="color-size"]/span[1]'
     COLOR1 = './/p[@class="color-size"]/span[2]'
-
-    # NEXT_BUTTON = '//*[@id="js_reviewPager"]/ul/li[last()-1]/a'
-    # # TOTAL_PAGES = '//*[@id="js_reviewPager"]/ul/li[last()-1]/a/@data-page-index'
-    # TOTAL_PAGES = '//*[@id="js_reviewPager"]/ul/li'
-    # NEXT_PAGE = '//*[@id="js_reviewPager"]/ul/li//a'
-    # # RESTRICT = ['//div[@class="category-right-part clearfix"]//div[@class="category-list js-category"]',
-    # #             '//div[@class="site-pager-pad-pc site-pager"]']
-    # RESTRICT = '//div[@class="category-right-part clearfix"]//div[@class="category-list js-category"]/div[1]'
