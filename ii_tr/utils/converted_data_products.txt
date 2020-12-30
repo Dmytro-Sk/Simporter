@@ -1,0 +1,36 @@
+------------------ GET LOCATORS ------------------
+
+PRODUCT_ID = ''
+PRODUCT_URL = ''
+NAME = ''
+DISCOUNT_(%) = ''
+DISCOUNTED_PRICE_(0_IF_NO_SALE) = ''
+ORIGINAL_PRICE = ''
+TOTAL_REVIEWS = ''
+PRODUCT_INFO_(FORMATTED_STRING,_E.G._“OCCASION:DAILY;STYLE:FASHION”_) = ''
+
+
+---------- GET ELEMENTS NAMES FOR INIT -----------
+
+self.url_index = url_index
+self.url = url
+self.product_id = elements.get_value(Locators.PRODUCT_ID, 'xpath', 'text')
+self.product_url = elements.get_value(Locators.PRODUCT_URL, 'xpath', 'text')
+self.name = elements.get_value(Locators.NAME, 'xpath', 'text')
+self.discount_(%) = elements.get_value(Locators.DISCOUNT_(%), 'xpath', 'text')
+self.discounted_price_(0_if_no_sale) = elements.get_value(Locators.DISCOUNTED_PRICE_(0_IF_NO_SALE), 'xpath', 'text')
+self.original_price = elements.get_value(Locators.ORIGINAL_PRICE, 'xpath', 'text')
+self.total_reviews = elements.get_value(Locators.TOTAL_REVIEWS, 'xpath', 'text')
+self.product_info_(formatted_string,_e.g._“occasion:daily;style:fashion”_) = elements.get_value(Locators.PRODUCT_INFO_(FORMATTED_STRING,_E.G._“OCCASION:DAILY;STYLE:FASHION”_), 'xpath', 'text')
+
+
+--------- GET ELEMENTS NAMES FOR RESULT ----------
+
+[self.url_index = url_index, self.url = url, self.product_id, self.product_url, self.name, self.discount_(%), self.discounted_price_(0_if_no_sale), self.original_price, self.total_reviews, self.product_info_(formatted_string,_e.g._“occasion:daily;style:fashion”_)]
+
+
+--------------- GET COLUMNS NAMES ----------------
+
+[index, url, Product Id, Product Url, Name, Discount (%), Discounted Price (0 If No Sale), Original Price, Total Reviews, Product Info (Formatted String, E.G. “Occasion:Daily;Style:Fashion” )]
+
+

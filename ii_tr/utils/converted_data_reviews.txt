@@ -1,0 +1,32 @@
+------------------ GET LOCATORS ------------------
+
+PRODUCT_ID = ''
+RATING = ''
+TIMESTAMP_(CONVERT_REVIEW_DATE_TO_UNIX_TIMESTAMP) = ''
+TEXT = ''
+SIZE = ''
+COLOR = ''
+
+
+---------- GET ELEMENTS NAMES FOR INIT -----------
+
+self.url_index = url_index
+self.url = url
+self.product_id = elements.get_value(Locators.PRODUCT_ID, 'xpath', 'text')
+self.rating = elements.get_value(Locators.RATING, 'xpath', 'text')
+self.timestamp_(convert_review_date_to_unix_timestamp) = elements.get_value(Locators.TIMESTAMP_(CONVERT_REVIEW_DATE_TO_UNIX_TIMESTAMP), 'xpath', 'text')
+self.text = elements.get_value(Locators.TEXT, 'xpath', 'text')
+self.size = elements.get_value(Locators.SIZE, 'xpath', 'text')
+self.color = elements.get_value(Locators.COLOR, 'xpath', 'text')
+
+
+--------- GET ELEMENTS NAMES FOR RESULT ----------
+
+[self.url_index = url_index, self.url = url, self.product_id, self.rating, self.timestamp_(convert_review_date_to_unix_timestamp), self.text, self.size, self.color]
+
+
+--------------- GET COLUMNS NAMES ----------------
+
+[index, url, Product Id, Rating, Timestamp (Convert Review Date To Unix Timestamp), Text, Size, Color]
+
+
