@@ -20,7 +20,7 @@ NEWSPIDER_MODULE = 'i_simporter.spiders'
 ROBOTSTXT_OBEY = True
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
-CONCURRENT_REQUESTS = 1
+CONCURRENT_REQUESTS = 4
 
 # Custom settings
 # FEED_EXPORT_BATCH_ITEM_COUNT = 10

@@ -1,15 +1,17 @@
 import scrapy
-from .locators import Locators
-from ..items import DresslilyComProductsItem
 import csv
+from scrapy.crawler import CrawlerProcess
 from selenium import webdriver
+
+from i_simporter.i_simporter.spiders.locators import Locators
+from i_simporter.i_simporter.items import DresslilyComProductsItem
 
 
 class DresslilyComProductsSpider(scrapy.Spider):
     name = 'dresslily_com_products'
     allowed_domains = ['dresslily.com']
 
-    with open('../i_simporter/iii_results/dresslily_com_urls.csv') as f:
+    with open('../../iii_results/dresslily_com_urls.csv') as f:
         reader = csv.reader(f)
         url_list = []
         for line in reader:
@@ -20,7 +22,7 @@ class DresslilyComProductsSpider(scrapy.Spider):
     custom_settings = {
         'FEED_EXPORT_BATCH_ITEM_COUNT': 100,
         'FEED_FORMAT': 'csv',
-        'FEED_URI': '../i_simporter/iii_results/i_products/%(batch_id)02d-dresslily_com_products1.csv',
+        'FEED_URI': '../../iii_results/i_products/%(batch_id)02d-dresslily_com_products1.csv',
         'FEED_EXPORT_FIELDS': [
             'product_id',
             'product_url',
@@ -76,3 +78,9 @@ class DresslilyComProductsSpider(scrapy.Spider):
         items['product_info'] = product_info
 
         yield items
+
+
+if __name__ == '__main__':
+    process = CrawlerProcess()
+    process.crawl(DresslilyComReviewsSpider)
+    process.start()
