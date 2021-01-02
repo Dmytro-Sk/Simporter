@@ -47,7 +47,8 @@ class DresslilyComReviewsSpider(scrapy.Spider):
                 yield scrapy.Request(url, callback=self.parse_reviews, headers=self.headers,
                                      meta={'product_id': product_id})
 
-    def parse_reviews(self, response):
+    @staticmethod
+    def parse_reviews(response):
         items = DresslilyComViewsItem()
 
         data = json.loads(response.body)
