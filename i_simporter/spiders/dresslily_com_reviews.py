@@ -45,10 +45,10 @@ class DresslilyComReviewsSpider(scrapy.Spider):
             for page in range(1, pages_amount + 1):
                 url = f'https://www.dresslily.com/m-review-a-view_review_list-goods_id-{goods_id}-page-{page}?odr=0'
                 yield scrapy.Request(url, callback=self.parse_reviews, headers=self.headers,
-                                     meta={'product_id': product_id})
+                                     cb_kwargs={'product_id': product_id})
 
     @staticmethod
-    def parse_reviews(response):
+    def parse_reviews(response, **kwargs):
         items = DresslilyComViewsItem()
 
         data = json.loads(response.body)
@@ -57,13 +57,12 @@ class DresslilyComReviewsSpider(scrapy.Spider):
             timestamp = int(time.mktime(time.strptime(i['adddate'], '%b,%d %Y %H:%M:%S')))
             text = i['pros']
             if i['goods'] is False:
-                size = None
-                color = None
+                size, color = None, None
             else:
                 size = i['goods']['size']
                 color = i['goods']['color']
 
-            items['product_id'] = response.meta['product_id']
+            items['product_id'] = kwargs['product_id']
             items['rating'] = rating
             items['timestamp'] = timestamp
             items['text'] = text
